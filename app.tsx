@@ -11,15 +11,15 @@ const App = () => {
 
   const fetchData = async () => {
     try {
-      const заявкиResponse = await axios.get('http://192.168.0.4:5000/заявки');  // Замените на ваш IP и порт
+      const заявкиResponse = await axios.get('http://127.0.0.1:5000/заявки');  // Замените на ваш IP и порт
       console.log('Заявки:', заявкиResponse.data);  // Отладка
-      const графикResponse = await axios.get('http://192.168.0.4:5000/график_работы');  // Замените на ваш IP и порт
+      const графикResponse = await axios.get('http://127.0.0.1:5000/график_работы');  // Замените на ваш IP и порт
       console.log('График работы:', графикResponse.data);  // Отладка
       setЗаявки(заявкиResponse.data);
       setГрафик(графикResponse.data);
       setLoading(false);
     } catch (error) {
-      console.error("Ебанная хуйня",error);
+      console.error(error);
       setLoading(false);
     }
   };
